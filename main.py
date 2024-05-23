@@ -1,5 +1,4 @@
-# testing
-print("this is working")
-print("no way idk what to say")
-# this is cool
-# yo yo yo testing still
+# this will be to automate a form i must fill multiple times a day
+from selenium import webdriver
+
+driver = webdriver.Chrome()
