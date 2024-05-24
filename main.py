@@ -1,10 +1,7 @@
 # this will be to automate a form i must fill multiple times a day
 from selenium import webdriver
-from urls import link
+from urls import LINK, CHROME_USER_DIR
 
-# keep brower open
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_experimental_option("detach", True)
-
-driver = webdriver.Chrome(options=chrome_options)
-driver.get(link)
+options = webdriver.ChromeOptions()
+options.add_argument(f"user-data-dir={CHROME_USER_DIR}")
+options.add_argument("profile-directory=Default")
