@@ -2,9 +2,9 @@
 from selenium import webdriver
 import urls
 
-options = webdriver.ChromeOptions()
-options.add_argument(f"user-data-dir={urls.CHROME_USER_DIR}")
-options.add_argument("profile-directory=Default")
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument(f"user-data-dir={urls.CHROME_USER_DIR}")
+chrome_options.add_argument("profile-directory=Default")
 
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome(options=chrome_options)
 driver.get(urls.LINK)
