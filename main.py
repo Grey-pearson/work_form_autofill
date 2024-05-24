@@ -9,5 +9,5 @@ chrome_options.add_argument(f"user-data-dir={urls.CHROME_USER_DIR}")
 chrome_options.add_argument("profile-directory=Default")
 chrome_driver = "C:\chromedriver.exe"
 
-driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 print(driver.title)
