@@ -2,6 +2,9 @@
 from selenium import webdriver
 from urls import link
 
+# keep brower open
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_experimental_option("detach", True)
 
 driver = webdriver.Chrome()
 driver.get(link)
