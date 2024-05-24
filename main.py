@@ -1,5 +1,6 @@
 # this will be to automate a form i must fill multiple times a day
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 import urls
 
 chrome_options = webdriver.ChromeOptions()
