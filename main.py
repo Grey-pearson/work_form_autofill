@@ -11,3 +11,5 @@ chrome_driver = "C:\chromedriver.exe"
 
 driver = webdriver.Chrome(options=chrome_options)
 print(driver.title)
+
+driver.get(urls.LINK)
