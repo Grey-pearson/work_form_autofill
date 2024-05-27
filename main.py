@@ -3,16 +3,15 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from urls import LINK
+from Class.CamConfig import BrowserControl, sign_in
 
 
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_experimental_option("detach", True)
+def click_service_now():
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_experimental_option("detach", True)
 
-driver = webdriver.Chrome(options=chrome_options)
-driver.get(LINK)
-
-
-def click_service_now(driver):
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.get(LINK)
     driver.find_element(By.LINK_TEXT, value="select")
     driver.implicitly_wait(60)
     # click on img name ServiceNow logo
@@ -30,4 +29,8 @@ def click_service_now(driver):
     # im going to create tkinter ui for this as well probably
 
 
-click_service_now(driver)
+# click_service_now()
+
+browser_control = BrowserControl()
+
+browser_control.sign_in()
