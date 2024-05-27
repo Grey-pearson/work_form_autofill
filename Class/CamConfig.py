@@ -18,6 +18,9 @@ class BrowserControl:
         chrome_options.add_experimental_option("detach", True)
 
         self.driver = webdriver.Chrome(options=chrome_options)
-    
-        def sign_in():
-            
+
+    def sign_in(self):
+        self.running = True
+        self.driver.get(LINK)
+
+        # all the shtuff needed to get
