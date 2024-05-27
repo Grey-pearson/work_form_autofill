@@ -19,6 +19,10 @@ def click_service_now(driver):
 
     wait = WebDriverWait(driver, timeout=30)
     wait.until(lambda d: service_now.is_displayed())
+
+    service_now.send_keys("Displayed")
+    assert service_now.get_property("value") == "Displayed"
+
     print(service_now)
     # click on button name rquest catolog
     # find element to select for config request
