@@ -12,7 +12,7 @@ driver.get(LINK)
 
 
 # click on img name ServiceNow logo
-service_now = driver.find_element(by="aria-label", value="Select Okta FastPass.")
+service_now = driver.find_element(by="name", value="ServiceNow logo")
 wait = ui.WebDriverWait(driver=driver, timeout=30)
 wait.until(lambda d: service_now.is_displayed)
 print(service_now)
