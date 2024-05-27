@@ -10,7 +10,7 @@ from urls import LINK
 # funcs to close chorme at the end ig?
 
 
-class SetUp:
+class BrowserControl:
     def __init__(self):
         self.running = False
         # idk what else to put here
