@@ -10,7 +10,7 @@ driver = webdriver.Chrome(options=chrome_options)
 driver.get(LINK)
 
 # click on img name ServiceNow logo
-driver.find_element(By.NAME, "ServiceNow logo").click()
+driver.find_element(by="aria-label", value="Select Okta FastPass.")
 # click on button name rquest catolog
 # find element to select for config request
 # fill out form
