@@ -16,4 +16,4 @@ driver.find_element(by="aria-label", value="Select Okta FastPass.")
 # fill out form
 
 # im going to create tkinter ui for this as well probably
-# driver.close()
+driver.close()
