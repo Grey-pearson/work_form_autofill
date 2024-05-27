@@ -13,4 +13,8 @@ from urls import LINK
 class BrowserControl:
     def __init__(self):
         self.running = False
-        # idk what else to put here
+        # set up function to create driver ig?
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_experimental_option("detach", True)
+
+        self.driver = webdriver.Chrome(options=)
