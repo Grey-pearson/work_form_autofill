@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.common import NoSuchElementException, ElementNotInteractableException
 from urls import LINK
 
 # this will open browser,
@@ -24,3 +25,12 @@ class BrowserControl:
         self.driver.get(LINK)
 
         # all the shtuff needed to get
+        log_in_button = self.driver.find_element(
+            By.XPATH, '//*[@id="form35"]/div[2]/div/div[1]/div[2]/div[2]/a'
+        )
+        errors = [NoSuchElementException, ElementNotInteractableException]
+
+        wait = WebDriverWait(
+            self.driver, timeout=2, poll_frequency=0.2, ignored_exceptions=errors
+        )
+        wait.until(lambda d: revealed.send_keys("Displayed") or True)
