@@ -13,15 +13,14 @@ driver.get(LINK)
 
 
 def click_service_now(driver):
+    driver.find_element(By.LINK_TEXT, value="select")
+    driver.implicitly_wait(60)
     # click on img name ServiceNow logo
-    service_now = driver.find_element(By.NAME, value="ServiceNow logo")
+    service_now = driver.find_element(By.LINK_TEXT, value="ServiceNow")
     # driver.find_element(By.NAME, "revealed")
 
-    wait = WebDriverWait(driver, timeout=30)
+    wait = WebDriverWait(driver, timeout=60)
     wait.until(lambda d: service_now.is_displayed())
-
-    service_now.send_keys("Displayed")
-    assert service_now.get_property("value") == "Displayed"
 
     print(service_now)
     # click on button name rquest catolog
@@ -29,7 +28,6 @@ def click_service_now(driver):
     # fill out form
 
     # im going to create tkinter ui for this as well probably
-    driver.close()
 
 
 click_service_now(driver)
