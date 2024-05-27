@@ -31,6 +31,8 @@ class BrowserControl:
         errors = [NoSuchElementException, ElementNotInteractableException]
 
         wait = WebDriverWait(
-            self.driver, timeout=2, poll_frequency=0.2, ignored_exceptions=errors
+            self.driver, timeout=5, poll_frequency=0.2, ignored_exceptions=errors
         )
-        wait.until(lambda d: revealed.send_keys("Displayed") or True)
+        wait.until(lambda d: log_in_button.send_keys("Displayed") or True)
+
+        log_in_button.click()
