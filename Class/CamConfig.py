@@ -25,13 +25,13 @@ class BrowserControl:
         self.driver.get(LINK)
 
         # all the shtuff needed to get
-        log_in_button = self.driver.find_element(
-            By.XPATH, '//*[@id="form35"]/div[2]/div/div[1]/div[2]/div[2]/a'
-        )
         errors = [NoSuchElementException, ElementNotInteractableException]
 
         wait = WebDriverWait(
             self.driver, timeout=5, poll_frequency=0.2, ignored_exceptions=errors
+        )
+        log_in_button = self.driver.find_element(
+            By.XPATH, '//*[@id="form35"]/div[2]/div/div[1]/div[2]/div[2]/a'
         )
         wait.until(lambda d: log_in_button.send_keys("Displayed") or True)
 
