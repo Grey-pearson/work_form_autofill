@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.remote.webdriver import WebDriver
-import selenium.webdriver.support.ui as ui
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 from urls import LINK
 
 
@@ -12,7 +13,7 @@ driver.get(LINK)
 
 
 # click on img name ServiceNow logo
-wait = ui.WebDriverWait(driver=driver, timeout=30)
+wait = WebDriverWait(driver, timeout=30)
 wait.until(lambda d: service_now.is_displayed())
 service_now = driver.find_element(by="name", value="ServiceNow logo")
 print(service_now)
