@@ -35,4 +35,4 @@ browser_control = BrowserControl()
 
 browser_control.sign_in()
 
-browser_control.close()
+# browser_control.close()
