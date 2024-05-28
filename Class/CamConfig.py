@@ -41,7 +41,3 @@ class BrowserControl:
 
     def close(self):
         self.driver.close()
-
-
-# shinasdlfjsdklgfjdsklfag
-# im struggeling with ssh idk whats going on omg
