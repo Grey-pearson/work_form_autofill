@@ -30,9 +30,9 @@ class BrowserControl:
         wait = WebDriverWait(
             self.driver, timeout=5, poll_frequency=0.2, ignored_exceptions=errors
         )
+        wait.until(lambda d: log_in_button.send_keys("Displayed") or True)
         log_in_button = self.driver.find_element(
             By.XPATH, '//*[@id="form35"]/div[2]/div/div[1]/div[2]/div[2]/a'
         )
-        wait.until(lambda d: log_in_button.send_keys("Displayed") or True)
 
         log_in_button.click()
