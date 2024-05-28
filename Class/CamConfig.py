@@ -25,15 +25,19 @@ class BrowserControl:
         self.driver.get(LINK)
 
         # all the shtuff needed to get
+        self.driver.implicitly_wait(3)
         log_in_button = self.driver.find_element(
             By.XPATH,
             "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
         )
         errors = [NoSuchElementException, ElementNotInteractableException]
 
-        wait = WebDriverWait(
-            self.driver, timeout=5, poll_frequency=0.2, ignored_exceptions=errors
-        )
-        wait.until(lambda d: log_in_button.send_keys("Displayed") or True)
+        # wait = WebDriverWait(
+        #     self.driver, timeout=5, poll_frequency=0.2, ignored_exceptions=errors
+        # )
+        # wait.until(lambda d: log_in_button.send_keys("Displayed") or True)
 
         log_in_button.click()
+
+    def close(self):
+        self.driver.close()
