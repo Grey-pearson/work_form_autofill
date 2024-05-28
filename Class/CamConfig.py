@@ -41,3 +41,6 @@ class BrowserControl:
 
     def close(self):
         self.driver.close()
+
+
+# adding comment to try something
