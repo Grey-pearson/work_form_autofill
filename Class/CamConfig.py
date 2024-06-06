@@ -3,7 +3,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common import NoSuchElementException, ElementNotInteractableException
-from urls import LINK
+from urls import LINK, OLD_VMS
 
 # this will open browser,
 # log into okta > service now
@@ -13,7 +13,6 @@ from urls import LINK
 
 class BrowserControl:
     def __init__(self):
-        self.running = False
         # set up function to create driver ig?
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_experimental_option("detach", True)
@@ -21,7 +20,6 @@ class BrowserControl:
         self.driver = webdriver.Chrome(options=chrome_options)
 
     def sign_in(self):
-        self.running = True
         self.driver.get(LINK)
 
         # all the shtuff needed to get
@@ -41,12 +39,20 @@ class BrowserControl:
         log_in_button.click()
 
     def open_service_now(self):
-        self.running = True
         self.driver.implicitly_wait(3)
         service_now_button = self.driver.find_element(
             By.XPATH,
             "/html/body/div[2]/div/div/section/main/div/section/section/section[2]/section/div/section/div[29]/a/article",
         )
+        service_now_button.click()
+
+    def open_old_vms(self):
+        self.driver.implicitly_wait(3)
+        service_now_button = self.driver.find_element(
+            By.XPATH,
+            "/html/body/div[2]/div/div/section/main/div/section/section/section[2]/section/div/section/div[29]/a/article",
+        )
+        service_now_button.click()
 
     def close(self):
         self.driver.close()
