@@ -30,7 +30,8 @@ class BrowserControl:
             By.XPATH,
             "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
         )
-        errors = [NoSuchElementException, ElementNotInteractableException]
+
+        # errors = [NoSuchElementException, ElementNotInteractableException]
 
         # wait = WebDriverWait(
         #     self.driver, timeout=5, poll_frequency=0.2, ignored_exceptions=errors
@@ -42,7 +43,10 @@ class BrowserControl:
     def open_service_now(self):
         self.running = True
         self.driver.implicitly_wait(3)
-        service_now_button = self.driver.find_element(By.XPATH)
+        service_now_button = self.driver.find_element(
+            By.XPATH,
+            "/html/body/div[2]/div/div/section/main/div/section/section/section[2]/section/div/section/div[29]/a/article",
+        )
 
     def close(self):
         self.driver.close()
