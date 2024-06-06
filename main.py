@@ -1,8 +1,4 @@
-from selenium import webdriver
-from selenium.webdriver.remote.webdriver import WebDriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from urls import LINK
+import tkinter
 from Class.BrowserControl import BrowserControl
 
 
