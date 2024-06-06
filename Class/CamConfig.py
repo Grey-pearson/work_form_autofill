@@ -39,5 +39,10 @@ class BrowserControl:
 
         log_in_button.click()
 
+    def open_service_now(self):
+        self.running = True
+        self.driver.implicitly_wait(3)
+        service_now_button = self.driver.find_element(By.XPATH)
+
     def close(self):
         self.driver.close()
