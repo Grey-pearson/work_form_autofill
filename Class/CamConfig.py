@@ -38,14 +38,16 @@ class BrowserControl:
 
         log_in_button.click()
 
+    # works
     def open_service_now(self):
-        self.driver.implicitly_wait(3)
+        self.driver.implicitly_wait(10)
         service_now_button = self.driver.find_element(
             By.XPATH,
             "/html/body/div[2]/div/div/section/main/div/section/section/section[2]/section/div/section/div[29]/a/article",
         )
         service_now_button.click()
 
+    # needs sign in help as well or to be a brand new tab to keep SSO working
     def open_old_vms(self):
         self.driver.get(OLD_VMS)
 
