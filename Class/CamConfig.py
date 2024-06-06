@@ -50,7 +50,9 @@ class BrowserControl:
 
     # needs sign in help as well or to be a brand new tab to keep SSO working
     def open_old_vms(self):
+        self.driver.switch_to.new_window("tab")
         self.driver.get(OLD_VMS)
+        #  sign in somehow ig
         print("open_old_service_now success")
 
     def close(self):
