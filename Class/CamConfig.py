@@ -39,8 +39,10 @@ class BrowserControl:
 
         WebDriverWait(self.driver, 100, poll_frequency=0.1).until(
             EC.element_to_be_clickable(
-                By.XPATH,
-                "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
+                (
+                    By.XPATH,
+                    "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
+                )
             )
         ).click()
 
