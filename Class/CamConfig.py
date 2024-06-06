@@ -31,10 +31,14 @@ class BrowserControl:
             self.driver, timeout=5, poll_frequency=0.2, ignored_exceptions=errors
         )
         wait.until(lambda d: log_in_button.send_keys("Displayed") or True)
-        log_in_button = self.driver.find_element(
+        log_in_button = self.driver.element(
             By.XPATH,
             "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
         )
+
+        WebDriverWait(driver, 100, poll_frequency=0.1).until(
+            EC.element_to_be_clickable(By.ID, "search_button")
+        ).click()
 
         log_in_button.click()
 
