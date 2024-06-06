@@ -3,6 +3,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common import NoSuchElementException, ElementNotInteractableException
+from selenium.webdriver.support import expected_conditions as EC
 from urls import LINK, OLD_VMS
 
 # this will open browser,
@@ -36,8 +37,11 @@ class BrowserControl:
             "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
         )
 
-        WebDriverWait(driver, 100, poll_frequency=0.1).until(
-            EC.element_to_be_clickable(By.ID, "search_button")
+        WebDriverWait(self.driver, 100, poll_frequency=0.1).until(
+            self.driver.element_to_be_clickable(
+                By.XPATH,
+                "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
+            )
         ).click()
 
         log_in_button.click()
