@@ -15,6 +15,7 @@ class BrowserControl:
     def __init__(self):
         # set up function to create driver ig?
         chrome_options = webdriver.ChromeOptions()
+        chrome_options.page_load_strategy = "normal"
         chrome_options.add_experimental_option("detach", True)
 
         self.driver = webdriver.Chrome(options=chrome_options)
@@ -23,7 +24,7 @@ class BrowserControl:
         self.driver.get(LINK)
 
         # all the shtuff needed to get
-        self.driver.implicitly_wait(3)
+        # self.driver.implicitly_wait(3)
         log_in_button = self.driver.find_element(
             By.XPATH,
             "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
