@@ -26,25 +26,25 @@ class BrowserControl:
 
         # all the shtuff needed to get
         # self.driver.implicitly_wait(3)
-        errors = [NoSuchElementException, ElementNotInteractableException]
+        # errors = [NoSuchElementException, ElementNotInteractableException]
 
-        wait = WebDriverWait(
-            self.driver, timeout=5, poll_frequency=0.2, ignored_exceptions=errors
-        )
-        wait.until(lambda d: log_in_button.send_keys("Displayed") or True)
-        log_in_button = self.driver.element(
-            By.XPATH,
-            "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
-        )
+        # wait = WebDriverWait(
+        #     self.driver, timeout=5, poll_frequency=0.2, ignored_exceptions=errors
+        # )
+        # wait.until(lambda d: log_in_button.send_keys("Displayed") or True)
+        # log_in_button = self.driver.element(
+        #     By.XPATH,
+        #     "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
+        # )
 
         WebDriverWait(self.driver, 100, poll_frequency=0.1).until(
-            self.driver.element_to_be_clickable(
+            EC.element_to_be_clickable(
                 By.XPATH,
                 "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
             )
         ).click()
 
-        log_in_button.click()
+        # log_in_button.click()
 
     # works
     def open_service_now(self):
