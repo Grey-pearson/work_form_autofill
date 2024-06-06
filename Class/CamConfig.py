@@ -24,19 +24,6 @@ class BrowserControl:
     def sign_in(self):
         self.driver.get(LINK)
 
-        # all the shtuff needed to get
-        # self.driver.implicitly_wait(3)
-        # errors = [NoSuchElementException, ElementNotInteractableException]
-
-        # wait = WebDriverWait(
-        #     self.driver, timeout=5, poll_frequency=0.2, ignored_exceptions=errors
-        # )
-        # wait.until(lambda d: log_in_button.send_keys("Displayed") or True)
-        # log_in_button = self.driver.element(
-        #     By.XPATH,
-        #     "/html/body/div[2]/div[2]/main/div[2]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/a",
-        # )
-
         WebDriverWait(self.driver, 100, poll_frequency=0.1).until(
             EC.element_to_be_clickable(
                 (
@@ -46,20 +33,26 @@ class BrowserControl:
             )
         ).click()
 
-        # log_in_button.click()
+        print("sign_in success")
 
     # works
     def open_service_now(self):
-        self.driver.implicitly_wait(10)
-        service_now_button = self.driver.find_element(
-            By.XPATH,
-            "/html/body/div[2]/div/div/section/main/div/section/section/section[2]/section/div/section/div[29]/a/article",
-        )
-        service_now_button.click()
+
+        WebDriverWait(self.driver, 100, poll_frequency=0.1).until(
+            EC.element_to_be_clickable(
+                (
+                    By.XPATH,
+                    "/html/body/div[2]/div/div/section/main/div/section/section/section[2]/section/div/section/div[29]/a/article",
+                )
+            )
+        ).click()
+        print("open_service_now success")
 
     # needs sign in help as well or to be a brand new tab to keep SSO working
     def open_old_vms(self):
         self.driver.get(OLD_VMS)
+        print("open_old_service_now success")
 
     def close(self):
         self.driver.close()
+        print("close success")
