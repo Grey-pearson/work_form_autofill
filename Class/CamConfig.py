@@ -47,12 +47,7 @@ class BrowserControl:
         service_now_button.click()
 
     def open_old_vms(self):
-        self.driver.implicitly_wait(3)
-        service_now_button = self.driver.find_element(
-            By.XPATH,
-            "/html/body/div[2]/div/div/section/main/div/section/section/section[2]/section/div/section/div[29]/a/article",
-        )
-        service_now_button.click()
+        self.driver.get(OLD_VMS)
 
     def close(self):
         self.driver.close()
