@@ -8,7 +8,7 @@ from urls import *
 
 # this will open browser,
 # log into okta > service now
-# fill and submit form
+# fill and submit form 
 # funcs to close chorme at the end ig?
 
 
@@ -42,7 +42,7 @@ class BrowserControl:
         
         print("sign_in_to_service_now success")
 
-    def configuration_form(self, TDC):
+    def configuration_form(self):
         self.wait_to_click(REQUEST_CATOLOG_BUTTON)
         self.wait_to_click(RECONFIGURATION_REQUEST_BUTTON)
         self.wait_to_click(CLICK_FOR_TDC_ENTRY)
