@@ -19,6 +19,6 @@ browser_control = BrowserControl()
 
 browser_control.sign_in_to_service_now()
 
-browser_control.configuration_form('TDC13628')
+browser_control.configuration_form()
 
 # browser_control.close()
