@@ -1,6 +1,6 @@
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
-from Class.BrowserControl import *
+from Class.BrowserControl import BrowserControl
 
 # root = ttk.Window(themename="solar")
 # root.title("VMS-inator")
