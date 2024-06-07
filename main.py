@@ -2,16 +2,16 @@ import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from Class.BrowserControl import *
 
-root = ttk.Window(themename="solar")
-root.title("VMS-inator")
+# root = ttk.Window(themename="solar")
+# root.title("VMS-inator")
 
-TDC = ttk.Entry(bootstyle="success").pack(side=TOP, padx=5, pady=10)
-right_cam = ttk.Checkbutton(bootstyle="success").pack()
-center_cam = ttk.Checkbutton(bootstyle="success").pack()
-left_cam = ttk.Checkbutton(bootstyle="success").pack()
+# TDC = ttk.Entry(bootstyle="success").pack(side=TOP, padx=5, pady=10)
+# right_cam = ttk.Checkbutton(bootstyle="success").pack()
+# center_cam = ttk.Checkbutton(bootstyle="success").pack()
+# left_cam = ttk.Checkbutton(bootstyle="success").pack()
 
 
-root.mainloop()
+# root.mainloop()
 
 
 # use after geting GUI set up to take tdc and what cams are needed to be configed
