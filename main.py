@@ -17,10 +17,8 @@ from BrowserControl import BrowserControl
 # use after geting GUI set up to take tdc and what cams are needed to be configed
 browser_control = BrowserControl()
 
-# cam selection with Checkbutton()
-
 browser_control.sign_in_to_service_now()
 
-# browser_control.open_old_vms()
+browser_control.configuration_form('TDC13628')
 
 # browser_control.close()
