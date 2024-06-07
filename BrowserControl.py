@@ -42,7 +42,7 @@ class BrowserControl:
         
         print("sign_in_to_service_now success")
 
-    def configuration_form(self):
+    def configuration_form(self, TDC):
         self.wait_to_click(REQUEST_CATOLOG_BUTTON)
         self.wait_to_click(RECONFIGURATION_REQUEST_BUTTON)
         self.wait_to_click(CLICK_FOR_TDC_ENTRY)
