@@ -19,9 +19,8 @@ class BrowserControl:
         chrome_options.page_load_strategy = "normal"
         chrome_options.add_experimental_option("detach", True)
 
-        self.driver = webdriver.Chrome(options=chrome_options)
-
     def sign_in(self):
+        self.driver = webdriver.Chrome(options=self.chrome_options)
         self.driver.get(LINK)
 
         WebDriverWait(self.driver, 100, poll_frequency=0.1).until(
