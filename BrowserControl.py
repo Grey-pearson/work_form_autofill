@@ -30,34 +30,12 @@ class BrowserControl:
             )
         ).click()
 
-    def sign_in(self):
-        self.driver.get(LINK)
-
-        WebDriverWait(self.driver, 100, poll_frequency=0.1).until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    OKTA_SIGN_IN_BUTTON,
-                )
-            )
-        ).click()
-
-        print("sign_in success")
-
-    # works
-    def open_service_now(self):
-
-        WebDriverWait(self.driver, 100, poll_frequency=0.1).until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    SERVICE_NOW_BUTTON,
-                )
-            )
-        ).click()
-        print("open_service_now success")
-
-
+    def sign_in_to_service_now(self):
+        self.driver.get(OKTA)
+        self.wait_to_click(OKTA_SIGN_IN_BUTTON)
+        print('okta button pressed')
+        self.wait_to_click(SERVICE_NOW_BUTTON)
+        print("sign_in_to_service_now success")
 
     # needs sign in help as well or to be a brand new tab to keep SSO working
     def open_old_vms(self):
