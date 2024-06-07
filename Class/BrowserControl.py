@@ -15,12 +15,12 @@ from urls import LINK, OLD_VMS
 class BrowserControl:
     def __init__(self):
         # set up function to create driver ig?
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.page_load_strategy = "normal"
-        chrome_options.add_experimental_option("detach", True)
+        self.chrome_options = webdriver.ChromeOptions()
+        self.chrome_options.page_load_strategy = "normal"
+        self.chrome_options.add_experimental_option("detach", True)
+        self.driver = webdriver.Chrome(options=self.chrome_options)
 
     def sign_in(self):
-        self.driver = webdriver.Chrome(options=self.chrome_options)
         self.driver.get(LINK)
 
         WebDriverWait(self.driver, 100, poll_frequency=0.1).until(
