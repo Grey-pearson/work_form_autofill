@@ -31,11 +31,21 @@ class BrowserControl:
         ).click()
 
     def sign_in_to_service_now(self):
+
         self.driver.get(OKTA)
+
         self.wait_to_click(OKTA_SIGN_IN_BUTTON)
+
         print('okta button pressed')
+
         self.wait_to_click(SERVICE_NOW_BUTTON)
+        
         print("sign_in_to_service_now success")
+
+    def configuration_form(self, TDC):
+        self.wait_to_click(REQUEST_CATOLOG_BUTTON)
+        self.wait_to_click(RECONFIGURATION_REQUEST_BUTTON)
+        self.wait_to_click(CLICK_FOR_TDC_ENTRY)
 
     # needs sign in help as well or to be a brand new tab to keep SSO working
     def open_old_vms(self):
