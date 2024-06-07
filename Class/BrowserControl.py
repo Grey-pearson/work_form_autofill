@@ -47,6 +47,16 @@ class BrowserControl:
         ).click()
         print("open_service_now success")
 
+    # def
+    # request catelog
+    # "/html/body/macroponent-f51912f4c700201072b211d4d8c26010//div/sn-canvas-appshell-root/sn-canvas-appshell-layout/sn-polaris-layout/div/sn-canvas-appshell-main//div/sn-canvas-experience-shell/macroponent-76a83a645b122010b913030a1d81c780//div/sn-canvas-root/sn-canvas-layout/sn-canvas-main//main/sn-canvas-screen//section/screen-action-transformer-b1fb5f821b6e611086baed71604bcb84/macroponent-b5fb5f821b6e611086baed71604bcb80//div/now-uxf-page/div/now-uxf-page-simple-container/div/now-uxf-page-simple-container[2]/div/now-uxf-page-simple-container[2]/div/now-uxf-page-simple-container/div/now-button-bare[1]//button"
+    # reconfiguration request
+    # "/html/body/div/section/main/div[3]/div/sp-page-row/div/div[1]/span[1]/div/div/div[2]/div[1]/div[2]/div/div/div/div/a"
+    # click to get to where tdc gets entered
+    # "/html/body/div[1]/section/main/div[2]/div/sp-page-row/div/div/span[1]/div/div/div/div/div[1]/div[1]/div/div[2]/form/div/sp-variable-layout/div[1]/div/div/div[3]/div/span/span/div/div/a"
+    # where tdc goes in form
+    # "/html/body/div[3]/div/input"
+
     # needs sign in help as well or to be a brand new tab to keep SSO working
     def open_old_vms(self):
         self.driver.switch_to.new_window("tab")
