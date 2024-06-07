@@ -19,9 +19,7 @@ browser_control = BrowserControl()
 
 # cam selection with Checkbutton()
 
-browser_control.sign_in()
-
-browser_control.open_service_now()
+browser_control.sign_in_to_service_now()
 
 # browser_control.open_old_vms()
 
